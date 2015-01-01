@@ -27,8 +27,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/playerselect', playerselect);
 app.use('/preload', preload);
-app.use('/waitplayer',waitplayer);
-app.use('/fight',fight);
+app.use('/waitplayer', waitplayer);
+app.use('/fight', fight);
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {

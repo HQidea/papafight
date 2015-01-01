@@ -1,18 +1,18 @@
-var ACTION_PERIOD=500;
+var ACTION_PERIOD = 500;
 
-var ORIENTATION={};
-ORIENTATION.RIGHT="right";
-ORIENTATION.LEFT="left";
+var ORIENTATION = {};
+ORIENTATION.RIGHT = "right";
+ORIENTATION.LEFT = "left";
 
-var ACTION={};
-ACTION.ATTACK="attack";
-ACTION.DEFEND="defend";
-ACTION.NODEFEND="nodefend";
-ACTION.ESCAPELEFT="escapeLeft";
-ACTION.ESCAPERIGHT="escapeRight";
+var ACTION = {};
+ACTION.ATTACK = "attack";
+ACTION.DEFEND = "defend";
+ACTION.NODEFEND = "nodefend";
+ACTION.ESCAPELEFT = "escapeLeft";
+ACTION.ESCAPERIGHT = "escapeRight";
 
-var RESOURCE={};
-RESOURCE.IMAGES=[
+var RESOURCE = {};
+RESOURCE.IMAGES = [
 	"/images/role/0.png",
 	"/images/role/1.png",
 	"/images/role/2.png",
@@ -47,7 +47,7 @@ RESOURCE.IMAGES=[
 	"/images/fight_bk.jpg",
 	"/images/wait_bk.gif"
 ];
-RESOURCE.AUDIOS=[
+RESOURCE.AUDIOS = [
 	"/audios/bomb.wav",
 	"/audios/fight_begin.wav",
 	"/audios/fight_bk.wav",
