@@ -43,6 +43,11 @@
 				document.location.href = "/preload";
 			}
 		});
+		socket.on("manual token", function(data) {
+			$("#token").text(data.token);
+			$("div.binding").hide();
+			$("#token_area").fadeIn();
+		});
 	}
 
 	function initLoad() {

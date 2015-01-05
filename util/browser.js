@@ -12,7 +12,8 @@ Browser.prototype.isMobile = function() {
 		|| ua.indexOf('windowsphone') != -1
 		|| ua.indexOf('meego') != -1
 		|| ua.indexOf('compatible') != -1
-		|| ua.indexOf('playbook') != -1) {
+		|| ua.indexOf('playbook') != -1
+		|| ua.indexOf('mobile') != -1) {
 		return true;
 	}
 };

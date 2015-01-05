@@ -8,8 +8,14 @@ $(function() {
 			return;
 		}
 		//创建超声波
-		var ssocket = new SonicSocket({alphabet: '0123456789'});
-		ssocket.send(token);
+		try {
+			var ssocket = new SonicSocket({alphabet: '0123456789'});
+			ssocket.send(token);
+		}
+		catch (e) {
+			alert("你的手机不支持超声波通信！");
+			socket.emit("manual login", {token: token});
+		}
 	});
 	socket.on("token success", function(data) {
 		//令牌显示在屏幕上，以便和电脑端对比

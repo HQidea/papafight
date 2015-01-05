@@ -7,9 +7,12 @@ module.exports = function() {
 
 	var login_socket = global.socket.of('/login').on('connection', function(socket) {
 		token++;
-		socket.emit("token success", {token: token});
+		socket.emit('token success', {token: token});
+		socket.on('manual login', function(data) {
+			login_socket.emit('manual token', data);
+		});
    		socket.on('post token', function(data) {
-    		login_socket.emit("login success", data);
+    		login_socket.emit('login success', data);
   		});
    	});
 }();
