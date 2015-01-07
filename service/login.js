@@ -3,7 +3,7 @@
 */
 
 module.exports = function() {
-	var token = 0;
+	var token = 0, role = 1;
 
 	var login_socket = global.socket.of('/login').on('connection', function(socket) {
 		token++;
@@ -12,6 +12,12 @@ module.exports = function() {
 			login_socket.emit('manual token', data);
 		});
    		socket.on('post token', function(data) {
+			if (role === 1) {
+				data.role = role++;
+			}
+			else {
+				data.role = role--;
+			}
     		login_socket.emit('login success', data);
   		});
    	});

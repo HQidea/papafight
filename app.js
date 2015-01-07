@@ -6,8 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
-var playerselect = require('./routes/playerselect');
-var preload = require('./routes/preload');
 var waitplayer = require('./routes/waitplayer');
 var fight = require('./routes/fight');
 
@@ -25,8 +23,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/playerselect', playerselect);
-app.use('/preload', preload);
 app.use('/waitplayer', waitplayer);
 app.use('/fight', fight);
 

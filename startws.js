@@ -12,7 +12,5 @@ var server = app.listen(app.get('port'), function() {
 global.socket = require('socket.io')(8080);
 //登录相关的socket服务
 require('./service/login');
-require('./service/orientation');
 require('./service/waitplayer');
-require('./service/continue');
 require('./service/fight');

@@ -40,7 +40,8 @@
 				//存储令牌，便于以后使用
 				var storage = new Storage();
 				storage.setItem("token", data["token"]);
-				document.location.href = "/preload";
+				storage.setItem("role", data["role"]);
+				document.location.href = "/waitplayer";
 			}
 		});
 		socket.on("manual token", function(data) {

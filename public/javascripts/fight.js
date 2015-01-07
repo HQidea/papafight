@@ -10,26 +10,18 @@ $(function() {
 	$(".avatar-me>img").attr("src", "/images/avatar" + my_role + ".png");
 	$(".avatar-rival>img").attr("src", "/images/avatar" + opponent_role + ".png");
 	var PPKD = window.PPKD.init({
-    rival: {
-        img: '/images/rival' + opponent_role + '.png'
-    },
-    me: {
-        img: '/images/me' + my_role + '.png'
-    }
-  });
-	//游戏音频
-	var bkAudio = null;
-	var beginAudio = Utils.playAudio("/audios/fight_begin.wav");
-	var punch = null;
-	var escape = null;
-	var blooddrop = null;
+		rival: {
+			img: '/images/rival' + opponent_role + '.png'
+		},
+		me: {
+			img: '/images/me' + my_role + '.png'
+		}
+	});
 	//倒计时,告诉手机端，电脑端已经进入fight页面
 	setTimeout(function() {
 		var socket = io.connect(document.domain + ":8080/waitplayer");
 		socket.emit("enter fight page", {token: my_token});
-		beginAudio.pause();
 		$("#countdown").hide();
-		bkAudio = Utils.playAudio("/audios/fight_bk.wav", true);
 	}, 5000);
 	
 	//链接fight的socket
@@ -46,12 +38,6 @@ $(function() {
 		else {
 			PPKD.action('rival', 'attack');
 		}
-		if (punch == null) {
-			punch = Utils.playAudio("/audios/punch.wav");
-		}
-		else {
-			punch.play();
-		}
 	});
 	fight_socket.on("attack result", function(data) {
 		if (my_token != data["operator"] && my_token != data["target"]) {
@@ -66,12 +52,6 @@ $(function() {
 			PPKD.updateBlood('me', data["result"]);
 		}
 		if (data["result"] == 10) {
-			if (blooddrop == null) {
-				blooddrop = Utils.playAudio("/audios/blooddrop.mp3");
-			}
-			else {
-				blooddrop.play();
-			}
 			if (data["operator"] == my_token) {
 				$("#fight-hit").fadeIn();
 				setTimeout(function() {
@@ -118,12 +98,6 @@ $(function() {
 		else {
 			PPKD.action('rival', 'moveLeft');
 		}
-		if (escape == null) {
-			escape = Utils.playAudio("/audios/orientation.wav");
-		}
-		else {
-			escape.play();
-		}
 	});
 	fight_socket.on("escapeRight", function(data) {
 		if (my_token != data["operator"] && my_token != data["target"]) {
@@ -136,12 +110,6 @@ $(function() {
 		}
 		else {
 			PPKD.action('rival', 'moveRight');
-		}
-		if (escape == null) {
-			escape = Utils.playAudio("/audios/orientation.wav");
-		}
-		else {
-			escape.play();
 		}
 	});
 });

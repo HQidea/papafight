@@ -107,10 +107,10 @@
         <img src="/images/blood-green.png" alt="">
     </div>
     <div class="avatar-me">
-        <img src="/images/avatar3.png" alt="">
+        <img src="" alt="">
     </div>
     <div class="avatar-rival">
-        <img src="/images/avatar3.png" alt="">
+        <img src="" alt="">
     </div>
     <div id="gamer-container"></div>
     <div id="fight-result"></div>
@@ -211,15 +211,13 @@
                         	if(role=='me'){
                         		//自己输了
                                 $('#fight-result').css('background-image', 'url("/images/lose.gif")');
-                                url = '/preload';
+                                url = '/';
                                 result = 'fail';
-                                Utils.playAudio("/audios/looser.wav");
                         	}
                         	else{
                         		$('#fight-result').css('background-image', 'url("/images/win.gif")');
-                                url = '/fight/takephoto';
+                                url = '/';
                                 result = 'success';
-                                Utils.playAudio("/audios/winner.wav");
                         	}
                             $('#fight-result').fadeIn();
                             fight_socket.emit('fight over', {token: my_token, result: result});

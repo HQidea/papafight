@@ -118,11 +118,6 @@ $(function() {
  		if (data.token != my_token) {
  			return;
  		}
- 		if (data.result == 'success') {
- 			window.location.href = '/fight/mobileshare';
- 		}
-    else {
- 			window.location.href = '/playerselect/mobile';
- 		}
+		window.location.href = '/mobile';
  	});
 });

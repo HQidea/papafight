@@ -2,8 +2,6 @@ Utils.checkToken();
 
 $(function() {
 	Utils.verticalMiddle("body.wait-wrapper");
-	//播放音频
-	var audioBk = Utils.playAudio("/audios/loading.wav", true);
 	//vs闪烁动画
 	setInterval(function() {
 		$("#vs").animate({opacity: 0.5}, 500, function() {
