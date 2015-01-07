@@ -1,12 +1,8 @@
 @import url(reset.css);
-body.init{
-	background-color: #ebedf0;
-}
 body.wrapper{
 	background: #191215  url('../images/bg.jpg') center center no-repeat;
 }
 .papa-wrapper{
-	display: none;
 	width: 900px;
 	height: 560px;
 	margin: 0 auto;

@@ -34,7 +34,7 @@ $(function() {
 		setTimeout(function() {
 			document.location.href = "/fight";
 			audioBk.pause();
-		}, 3000);
+		}, 1500);
 	});
 	//玩家断开
 	window.onbeforeunload = function() {

@@ -1,8 +1,7 @@
 (function($, undefined) {
 	function init() {
 		initSonic();
-		Utils.verticalMiddle('div.beat-wrapper');
-		initLoad();
+		Utils.verticalMiddle('.papa-wrapper');
 	}
 	function initSonic() {
 		//创建超声波
@@ -49,18 +48,6 @@
 			$("div.binding").hide();
 			$("#token_area").fadeIn();
 		});
-	}
-
-	function initLoad() {
-		window.onload = function() {
-			setTimeout(function() {
-				$('div.beat-wrapper').fadeOut('slow',function() {
-					Utils.verticalMiddle('.papa-wrapper');
-					$('.papa-wrapper').show();
-					$('body').addClass('wrapper').removeClass('init');
-				});
-			}, 1500);
-		}
 	}
 
 	$(init);
