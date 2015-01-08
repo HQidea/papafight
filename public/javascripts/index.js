@@ -23,6 +23,12 @@
 			});
 			//超声波服务开启
 			sserver.start();
+
+			socket.on("manual token", function(data) {
+				$("#token").text(data.token);
+				$("div.binding").hide();
+				$("#token_area").fadeIn();
+			});
 		});
 		//重新匹配手机，超声波重启
 		$("#token_no").click(function() {
@@ -42,11 +48,6 @@
 				storage.setItem("role", data["role"]);
 				document.location.href = "/waitplayer";
 			}
-		});
-		socket.on("manual token", function(data) {
-			$("#token").text(data.token);
-			$("div.binding").hide();
-			$("#token_area").fadeIn();
 		});
 	}
 
