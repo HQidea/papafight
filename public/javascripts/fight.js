@@ -21,7 +21,6 @@ $(function() {
 	setTimeout(function() {
 		var socket = io.connect(document.domain + ":8080/waitplayer");
 		socket.emit("enter fight page", {token: my_token});
-		$("#countdown").hide();
 	}, 3000);
 	
 	//链接fight的socket
