@@ -3,11 +3,11 @@ Utils.checkToken();
 $(function() {
 	Utils.verticalMiddle("body.wait-wrapper");
 	//vs闪烁动画
-	setInterval(function() {
+	/*setInterval(function() {
 		$("#vs").animate({opacity: 0.5}, 500, function() {
 			$("#vs").animate({opacity: 1}, 500);
 		});
-	}, 1000);
+	}, 1000);*/
 	var storage = new Storage();
 	var token = storage.getItem("token");
 	var role = storage.getItem("role");
@@ -20,7 +20,7 @@ $(function() {
 			var img = "/images/role/" + data["role2"] + ".png";
 			$("#another_image").attr("src", img);
 			$("#another_player").show();
-			storage.setItem("rival_token", data["token2"]);  // TODO 命名统一 or 删除这条注释
+			storage.setItem("rival_token", data["token2"]);
 			storage.setItem("rival_role", data["role2"]);
 		}
 		else if (data["token2"] == token) {

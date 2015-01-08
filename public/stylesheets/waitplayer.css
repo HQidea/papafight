@@ -1,37 +1,19 @@
 @import url(reset.css);
 body {
-	width: 1920px;
-	height: 1080px;
+	width: 1440px;
+	height: 790px;
 	background: #191215  url('../images/wait_bk.gif') center center no-repeat;
 	overflow: hidden;
 }
 .wait-wrapper{
 	width: 1200px;
 	margin: 0 auto;
-	padding-top: 240px;
+	padding-top: 150px;
 }
 .wait-wrapper .player-one{
 	width: 400px;
 	height: 550px;
 	float: left;
-}
-.wait-wrapper .vs{
-	float: left;
-	width: 400px;
-	height: 400px;
-	line-height: 400px;
-	font-size: 140px;
-	font-weight:bold;
-	color: #fff;
-	text-align: center;
-	text-shadow: 0 0 10px #fff,
-                   0 0 20px #fff,
-                   0 0 30px #fff,
-                   0 0 40px #ff00de,
-                   0 0 70px #ff00de,
-                   0 0 80px #ff00de,
-                   0 0 100px #ff00de,
-                   0 0 150px #ff00de;
 }
 .wait-wrapper .player-one img,
 .wait-wrapper .player-wait img{
