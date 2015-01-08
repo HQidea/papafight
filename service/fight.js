@@ -15,7 +15,7 @@ module.exports = function() {
     socket.on('attack', function(data){
       var operator = data.operator;
       var target = data.target;
-      if (!!checkRemove(operator)) {
+      if (!!checkMoving(operator)) {
         return;
       }
       PLAYERS[operator] = PLAYERS[operator] || {};
@@ -57,7 +57,7 @@ module.exports = function() {
     socket.on('defend', function(data) {
       var operator = data.operator;
       var target = data.target;
-      if (!!checkRemove(operator)) {
+      if (!!checkMoving(operator)) {
         return;
       }
       PLAYERS[operator] = PLAYERS[operator] || {};
@@ -74,7 +74,7 @@ module.exports = function() {
     socket.on('nodefend', function(data) {
       var operator = data.operator;
       var target = data.target;
-      if (!!checkRemove(operator)) {
+      if (!!checkMoving(operator)) {
         return;
       }
       PLAYERS[operator] = PLAYERS[operator] || {};
@@ -91,7 +91,7 @@ module.exports = function() {
     socket.on('escapeLeft', function(data) {
       var operator = data.operator;
       var target = data.target;
-      if (!!checkRemove(operator)) {
+      if (!!checkMoving(operator)) {
         return;
       }
       PLAYERS[operator]['is_move'] = true;
@@ -112,7 +112,7 @@ module.exports = function() {
     socket.on('escapeRight', function(data) {
       var operator = data.operator;
       var target = data.target;
-      if (!!checkRemove(operator)) {
+      if (!!checkMoving(operator)) {
         return;
       }
       PLAYERS[operator]['is_move'] = true;
@@ -136,7 +136,7 @@ module.exports = function() {
         delete PLAYERS[data.token];
       }
     });
-    function checkRemove(operator) {
+    function checkMoving(operator) {
       if (!!PLAYERS[operator] && !!PLAYERS[operator]['is_move']) {
         return true;
       }
