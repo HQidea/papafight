@@ -5,13 +5,13 @@ $(function() {
 	var storage = new Storage();
 	var my_token = storage.getItem("token");
 	var my_role = storage.getItem("role");
-	var opponent_token = storage.getItem("opponent_token");
-	var opponent_role = storage.getItem("opponent_role");
+	var rival_token = storage.getItem("rival_token");
+	var rival_role = storage.getItem("rival_role");
 	$(".avatar-me>img").attr("src", "/images/avatar" + my_role + ".png");
-	$(".avatar-rival>img").attr("src", "/images/avatar" + opponent_role + ".png");
+	$(".avatar-rival>img").attr("src", "/images/avatar" + rival_role + ".png");
 	var PPKD = window.PPKD.init({
 		rival: {
-			img: '/images/rival' + opponent_role + '.png'
+			img: '/images/rival' + rival_role + '.png'
 		},
 		me: {
 			img: '/images/me' + my_role + '.png'

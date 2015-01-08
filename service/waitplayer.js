@@ -14,9 +14,9 @@ module.exports = function() {
         players.push({token: token, role: role});
       }
       else {
-        var opponent = players[players.length - 1];
-        var anotherToken = opponent.token;
-        var anotherRole = opponent.role;
+        var rival = players[players.length - 1];
+        var anotherToken = rival.token;
+        var anotherRole = rival.role;
         if (anotherToken != token) {
           players.pop();
           wait_socket.emit('wait success', {token1: token, token2: anotherToken, role1: role, role2: anotherRole});

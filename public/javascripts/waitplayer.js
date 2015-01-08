@@ -20,15 +20,15 @@ $(function() {
 			var img = "/images/role/" + data["role2"] + ".png";
 			$("#another_image").attr("src", img);
 			$("#another_player").show();
-			storage.setItem("opponent_token", data["token2"]);  // TODO 命名统一 or 删除这条注释
-			storage.setItem("opponent_role", data["role2"]);
+			storage.setItem("rival_token", data["token2"]);  // TODO 命名统一 or 删除这条注释
+			storage.setItem("rival_role", data["role2"]);
 		}
 		else if (data["token2"] == token) {
 			var img = "/images/role/" + data["role1"] + ".png";
 			$("#another_image").attr("src", img);
 			$("#another_player").show();
-			storage.setItem("opponent_token", data["token1"]);
-			storage.setItem("opponent_role", data["role1"]);
+			storage.setItem("rival_token", data["token1"]);
+			storage.setItem("rival_role", data["role1"]);
 		}
 		//进入打斗页面
 		setTimeout(function() {

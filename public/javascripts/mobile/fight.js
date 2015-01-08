@@ -17,14 +17,14 @@ $(function() {
 	//获取双方token
 	socket.on("wait success", function(data) {
 		if (data["token1"] == my_token) {
-			storage.setItem("opponent_token", data["token2"]);
-			storage.setItem("opponent_role", data["role2"]);
+			storage.setItem("rival_token", data["token2"]);
+			storage.setItem("rival_role", data["role2"]);
 			target_token = data["token2"];
 			target_role = data["role2"];
 		}
 		else if (data["token2"] == my_token) {
-			storage.setItem("opponent_token", data["token1"]);
-			storage.setItem("opponent_role", data["role1"]);
+			storage.setItem("rival_token", data["token1"]);
+			storage.setItem("rival_role", data["role1"]);
 			target_token = data["token1"];
 			target_role = data["role1"];
 		}
