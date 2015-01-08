@@ -1,6 +1,5 @@
 @import url(reset.css);
 body {
-	width: 1440px;
 	height: 790px;
 	background: #191215  url('../images/wait_bk.gif') center center no-repeat;
 	overflow: hidden;
