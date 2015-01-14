@@ -20,4 +20,8 @@ router.get('/mobile', function(req, res) {
     res.render('mobile/index');
 });
 
+router.get('/test', function(req, res) {
+    res.render('mobile/test');
+});
+
 module.exports = router;
